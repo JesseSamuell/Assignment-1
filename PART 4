@@ -1,0 +1,26 @@
+import random
+class LinkedList:
+    def __init__(self):
+        self.data = []
+
+    def append(self, data):
+        self.data.append(data)
+
+    def display(self):
+        for x in self.data:
+            print(x, "->", end=" ")
+        print("None")
+
+    def search(self, target):
+        return target in self.data
+
+
+my_list = LinkedList()
+values = random.sample(range(10, 100), random.randint(3, 7))
+for v in values:
+    my_list.append(v)
+
+
+my_list.display()
+search_target = random.choice(values + [5, 55, 95])
+print(f"Searching for {search_target}: {my_list.search(search_target)}")
